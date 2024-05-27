@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
     <title>Hello World</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:wght@400;500,800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue:wght@400;500,800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Libre Baskerville:wght@400;500,800&display=swap">
     <link rel="stylesheet" href="style/index.css">
+    <script src="script.js"></script>
 </head>
+
 <body>
     <header>
         <h3>Gdańsk Reviews</h3>
         <input type="text" placeholder="Your search...">
-        <div>
+        <div class="user">
             Username
-            
         </div>
     </header>
+
+    <br style="margin-top: 50px;">
+
+    <div id="content">
+        <div class="hot">
+            <h1>Trending</h1>
+
+            <div id="trending">
+                <script>
+                    const data = {
+                        thumbnail: "https://s.inyourpocket.com/gallery/275741.jpg",
+                        name: "Business Example",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    }
+
+                    const trending = document.getElementById("trending");
+
+                    for (let i = 0; i < 3; i++) {
+                        const businessCard = createBusinessCard.apply(null, Object.values(data));
+                        trending.appendChild(businessCard);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="latest">
+            <h1>Latest</h1>
+
+            <div id="latest">
+                <div class="review">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/2b/dd/28/img-20160903-170828-largejpg.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
