@@ -29,32 +29,72 @@
             <h1>Trending</h1>
 
             <div id="trending">
-                <script>
-                    const data = {
-                        thumbnail: "https://s.inyourpocket.com/gallery/275741.jpg",
-                        name: "Business Example",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-                    }
-
-                    const trending = document.getElementById("trending");
-
-                    for (let i = 0; i < 3; i++) {
-                        const businessCard = createBusinessCard.apply(null, Object.values(data));
-                        trending.appendChild(businessCard);
-                    }
-                </script>
             </div>
         </div>
-
         <div class="latest">
             <h1>Latest</h1>
 
             <div id="latest">
-                <div class="review">
-                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/2b/dd/28/img-20160903-170828-largejpg.jpg" alt="">
-                </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        Copyright © 2024 Gdańsk Reviews
+    </footer>
 </body>
+<script>
+    const trending = document.getElementById("trending");
+    const latest = document.getElementById("latest");
+
+    const pageData = {
+        username: "username",
+        hotPlaces: [
+            {
+                thumbnail: "https://s.inyourpocket.com/gallery/275741.jpg",
+                name: "Business Example",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            }, {
+                thumbnail: "https://s.inyourpocket.com/gallery/275741.jpg",
+                name: "Business Example",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            }, {
+                thumbnail: "https://s.inyourpocket.com/gallery/275741.jpg",
+                name: "Business Example",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            }
+        ],
+        latestReviews: [
+            {
+                thumbnail: "https://media-cdn.tripadvisor.com/media/photo-s/0d/2b/dd/28/img-20160903-170828-largejpg.jpg",
+                name: "Business Example",
+                reviewer: "username",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            },
+            {
+                thumbnail: "https://media-cdn.tripadvisor.com/media/photo-s/0d/2b/dd/28/img-20160903-170828-largejpg.jpg",
+                name: "Business Example",
+                reviewer: "username",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            },
+            {
+                thumbnail: "https://media-cdn.tripadvisor.com/media/photo-s/0d/2b/dd/28/img-20160903-170828-largejpg.jpg",
+                name: "Business Example",
+                reviewer: "username",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            }
+        ]
+    };
+
+    for (const data of pageData.hotPlaces) {
+        const businessCard = createBusinessCard.apply(null, Object.values(data));
+        trending.appendChild(businessCard);
+    }
+
+    for (const data of pageData.latestReviews) {
+        const reviewCard = createReviewCard.apply(null, Object.values(data));
+        latest.appendChild(reviewCard);
+    }
+</script>
+
 </html>

@@ -23,4 +23,27 @@ function createBusinessCard(thumbnail, name, description) {
     return business;
 }
 
+// Also vunerable to XSS
+function createReviewCard(thumbnail, name, reviewer, review) {
+    const template = `
+    <img src="${thumbnail}"
+    alt="">
+    <div class="rating">
+        <div class="pointer" style="left: 10%;">
+            <code>🔥</code>
+            <code>4.5</code>
+        </div>
+    </div>
+    <div class="review-content">
+        <h3>${name}</h3>
+        <small>By ${reviewer}</small>
+        <p>${review}</p>
+    </div>
+    `;
 
+    const reviewCard = document.createElement('div');
+    reviewCard.innerHTML = template;
+    reviewCard.classList.add('review');
+
+    return reviewCard;
+}

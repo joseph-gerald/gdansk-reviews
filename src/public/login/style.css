@@ -1,0 +1,57 @@
+:root {
+    --text: #161518;
+    --background: #ebe8f0;
+    --background-rgb: 235, 232, 240;
+    --primary: #b2a4cf;
+    --secondary: #45326b;
+    --accent: #8368bf;
+
+}
+
+body {
+    font-family: "Libre Baskerville", sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 50px;
+
+    max-width: 1024px;
+    margin: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 225px;
+}
+
+button,
+input {
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    color: var(--text);
+    width: 100%;
+
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    outline: none;
+
+    font-family: inherit;
+
+    border-radius: 5px;
+    padding: .6rem;
+}
+
+input {
+    width: calc(100% - 1.2rem);
+}
